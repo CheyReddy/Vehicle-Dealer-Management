@@ -31,12 +31,12 @@ public class MainController {
 	public String signin(@RequestBody Dealer dealer) {
 		return dealerService.verify(dealer);
 	}
-	
-	@ResponseBody
-	@PostMapping("/home")
-	public String dashboard() {
-		return "Dashboard";
-	}
-	
+
+	@PostMapping("/signout")
+	public ResponseEntity<String> signOut(HttpServletRequest request) {
+    String token = request.getHeader("Authorization").substring(7);
+    return ResponseEntity.ok("Signed out successfully");
+}
+
 	
 }
