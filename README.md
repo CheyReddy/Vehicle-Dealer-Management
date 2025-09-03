@@ -1,7 +1,7 @@
 🚗 Vehicle and Dealer Management System (Backend API)
 
 A Spring Boot REST API for managing dealers and their associated vehicles.
-This project demonstrates Spring Boot, Spring Security, Spring Data JPA, Hibernate, MySQL, and JWT authentication.
+This project demonstrates Spring Boot, Spring Security, Spring Data JPA, Hibernate, MySQL, JWT authentication, and Swagger API documentation.
 
 ✨ Features
 🔹 Dealer Management
@@ -24,6 +24,12 @@ User signup & login with JWT token
 
 Role-based access (future enhancement)
 
+🔹 API Documentation
+
+Integrated Swagger UI for API exploration and testing
+
+JWT Authorize 🔑 button enabled in Swagger
+
 🛠 Tech Stack
 
 Backend: Spring Boot, Spring Security, Spring Data JPA, Hibernate
@@ -31,6 +37,8 @@ Backend: Spring Boot, Spring Security, Spring Data JPA, Hibernate
 Database: MySQL / PostgreSQL (configurable)
 
 Authentication: JWT (JSON Web Token)
+
+API Documentation: Swagger / OpenAPI
 
 Build Tool: Maven
 
@@ -76,6 +84,19 @@ POST	/api/vehicles/addVehicle	Add vehicle
 PUT	/api/vehicles/{id}	Update vehicle
 DELETE	/api/vehicles/{id}	Delete vehicle
 GET	/api/vehicles/premium	Fetch vehicles from premium dealers
+📖 Swagger API Docs
+
+Once the app is running, you can explore and test APIs using Swagger UI:
+
+👉 http://localhost:8080/swagger-ui/index.html
+
+Use the Authorize 🔑 button to provide your JWT token:
+
+Bearer <your_jwt_token>
+
+
+After authorization, all secured endpoints can be tested directly from Swagger.
+
 📂 Project Structure
 src/
  ├─ main/
