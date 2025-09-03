@@ -1,3 +1,103 @@
+🚗 Vehicle and Dealer Management System (Backend API)
+
+A Spring Boot REST API for managing dealers and their associated vehicles.
+This project demonstrates Spring Boot, Spring Security, Spring Data JPA, Hibernate, MySQL, and JWT authentication.
+
+✨ Features
+🔹 Dealer Management
+
+Create, update, delete, and fetch dealers
+
+Assign vehicles to dealers
+
+🔹 Vehicle Management
+
+Add, update, delete, and fetch vehicles
+
+Link vehicles to dealers
+
+Fetch vehicles from premium dealers
+
+🔹 Authentication
+
+User signup & login with JWT token
+
+Role-based access (future enhancement)
+
+🛠 Tech Stack
+
+Backend: Spring Boot, Spring Security, Spring Data JPA, Hibernate
+
+Database: MySQL / PostgreSQL (configurable)
+
+Authentication: JWT (JSON Web Token)
+
+Build Tool: Maven
+
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/vehicle-dealer-management.git
+cd vehicle-dealer-management
+
+2️⃣ Configure Database
+
+Update your application.properties (or application.yml) with DB credentials:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/vehicle_dealer_db
+spring.datasource.username=your-username
+spring.datasource.password=your-password
+spring.jpa.hibernate.ddl-auto=update
+
+3️⃣ Build & Run the Project
+mvn spring-boot:run
+
+
+The application will start at:
+👉 http://localhost:8080
+
+🔑 API Endpoints
+Authentication
+Method	Endpoint	Description
+POST	/api/auth/signup	Register new user
+POST	/api/auth/signin	Login (returns JWT)
+POST	/api/auth/signout	Logout
+Dealer
+Method	Endpoint	Description
+GET	/api/dealers/all	List all dealers
+GET	/api/dealers/{id}	Get dealer by ID
+POST	/api/dealers/addDealer	Create dealer
+PUT	/api/dealers/{id}	Update dealer
+DELETE	/api/dealers/{id}	Delete dealer
+Vehicle
+Method	Endpoint	Description
+GET	/api/vehicles/all	List all vehicles
+GET	/api/vehicles/{id}	Get vehicle by ID
+POST	/api/vehicles/addVehicle	Add vehicle
+PUT	/api/vehicles/{id}	Update vehicle
+DELETE	/api/vehicles/{id}	Delete vehicle
+GET	/api/vehicles/premium	Fetch vehicles from premium dealers
+📂 Project Structure
+src/
+ ├─ main/
+ │   ├─ java/com/dvm/...
+ │   │   ├─ controller/   → REST Controllers
+ │   │   ├─ model/        → Entities (Dealer, Vehicle, User)
+ │   │   ├─ repository/   → Spring Data JPA Repos
+ │   │   ├─ service/      → Business logic
+ │   │   ├─ config/       → Configuration
+ │   │   ├─ jwt/          → JWT Utilities
+ │   └─ resources/
+ │       └─ application.properties
+
+📜 License
+
+This project is licensed under the MIT License.
+
+👨‍💻 Author
+
+Venkata Chaithanya Reddy Vangala
+💼 Java Full-Stack Developer | 🌱 Learning React & Spring Boot
+
 <img width="833" height="722" alt="update-vehicle-details" src="https://github.com/user-attachments/assets/5808f7bf-5a11-44c9-94a2-841563f75208" />
 <img width="807" height="656" alt="update-dealer" src="https://github.com/user-attachments/assets/60817e89-721c-4468-a521-0808a81607e9" />
 <img width="573" height="623" alt="simulation-payment" src="https://github.com/user-attachments/assets/ee941450-6494-4afb-9717-4ee1f07efa56" />
@@ -11,84 +111,5 @@
 <img width="1106" height="821" alt="fetch-all-vehicles" src="https://github.com/user-attachments/assets/1248bccf-ee6c-42c1-931a-6ed23a8f3098" />
 <img width="798" height="657" alt="dealer-signup" src="https://github.com/user-attachments/assets/23eda4e4-b44b-43e6-8958-027b4d259867" />
 <img width="827" height="778" alt="add-vehicle" src="https://github.com/user-attachments/assets/a56a956b-c31d-4770-8e7f-7b409e2646ff" />
-# 🚗 Vehicle and Dealer Management System (Backend API)
 
-A **Spring Boot REST API** for managing **dealers** and their associated **vehicles**.  
-This project demonstrates **Spring Boot, Spring Data JPA, Hibernate, MySQL, and JWT authentication**.
 
----
-
-## 📌 Features
-
-### Dealer Management
-- Create, update, delete, and fetch dealers
-- Assign vehicles to dealers
-
-### Vehicle Management
-- Add, update, delete, and fetch vehicles
-- Link vehicles to dealers
-
-### Authentication
-- User signup & login with JWT token
-- Role-based access (future enhancement)
----
-
-## 🛠️ Tech Stack
-- **Backend:** Spring Boot, Spring Security, Spring Data JPA, Hibernate  
-- **Database:** MySQL / PostgreSQL (configurable)  
-- **Authentication:** JWT (JSON Web Token)  
-- **Build Tool:** Maven  
----
-
-## ⚙️ Installation & Setup
-### 1. Clone the Repository 
-bash
-- git clone https://github.com/your-username/vehicle-dealer-management.git
-- cd vehicle-dealer-management
-### 2. Configure Database
-### 3. Build & Run the Project
-
-App will start on:
-👉 http://localhost:8080
-
-🔑 API Endpoints
-Authentication
-
-POST /api/auth/signup → Register new user
-POST /api/auth/signin → Login (returns JWT token)
-POST /api/auth/signout → Logout
-
-Dealer
-GET /api/dealers/all → List all dealers
-GET /api/dealers/{id} → Get dealer by ID
-POST /api/dealers/addDealer → Create dealer
-PUT /api/dealers/{id} → Update dealer
-DELETE /api/dealers/{id} → Delete dealer
-
-Vehicle
-GET /api/vehicles/all → List all vehicles
-GET /api/vehicles/{id} → Get vehicle by ID
-POST /api/vehicles/addVehicle → Add vehicle
-PUT /api/vehicles/{id} → Update vehicle
-DELETE /api/vehicles/{id} → Delete vehicle
-GET /api/vehicles/premium → Fetch Vehicles from Premium Dealers only
-
-src/
- ├─ main/
- │   ├─ java/com/dvm/...
- │   │   ├─ controller/   → REST Controllers
- │   │   ├─ model/        → Entities (Dealer, Vehicle, User)
- │   │   ├─ repository/   → Spring Data JPA Repos
- │   │   ├─ service/      → Business logic
- |   |   ├─ config/       → Configuration
- |   |   ├─ jwt/          → JWT
- │   └─ resources/
- │       └─ application.properties
-
-📜 License
-
-This project is licensed under the MIT License.
-👨‍💻 Author
-
-Venkata Chaithanya Reddy Vangala
-💼 Java Full-Stack Developer | 🌱 Learning React & Spring Boot
